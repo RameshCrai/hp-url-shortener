@@ -21,13 +21,12 @@ import lombok.NoArgsConstructor;
 @Builder
 @Entity
 @Table(name = "short_url")
-
 public class ShortUrl {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private UUID id;
 
-	@Column(nullable = false)
+	@Column(nullable = false, unique = true)
 	private String originalUrl;
 
 	@Column(nullable = false, unique = true)
